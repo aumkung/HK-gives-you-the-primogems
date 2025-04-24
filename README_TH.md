@@ -73,7 +73,7 @@ const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/127643386537
 
 5. **Token** - จากนั้นจะเห็น`ltoken_v2` ( กรอบสีเหลือง ) และ `ltuid_2 ` ( กรอบสีแดง ) ที่ช่องของ `NAME` เหมือนในภาพด้านล่าง
 
-6. **Config** - ให้คัดลอก `ltoken_v2` และ `ltuid_v2` ที่แสดงในช่องของ `value` บรรทัดใดก็ได้มาอย่างละ 1 บรรทัด และนำไปใส่ในช่อง [Config](https://github.com/Nattapat2871/HoyoverseGames-auto-login/edit/main/README_TH.md#configuration)
+6. **Config** - ให้คัดลอก `ltoken_v2` และ `ltuid_v2` ที่แสดงในช่องของ `value` บรรทัดใดก็ได้มาอย่างละ 1 บรรทัด และนำไปใส่ในช่อง [Config](https://github.com/Nattapat2871/HoyoverseGames-auto-login/blob/main/README_TH.md#configuration)
    และวาง token ไว้ในช่อง
      `token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", `
    
@@ -96,7 +96,7 @@ const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/127643386537
 
 4. **Token** - กดไปที่ `kiwi Extensions` ไอคอนสี่เหลี่ยมฝั่งซ้ายของไอคอน 3 ขีด ที่อยู่ขวาบนของแอป > `Cookie-Editor` จากนั่นจะเห็น `cookies` ทั้งหมดบนเว็บนี้ ให้เลื่อนหา `ltoken_v2` และ `ltuid_v2`
 
-5. **Config** - ให้คัดลอก `ltoken_v2` และ `ltuid_v2` ที่แสดงในช่อง `value` และนำไปใส่ในช่อง [Config](https://github.com/Nattapat2871/HoyoverseGames-auto-login/edit/main/README_TH.md#configuration)
+5. **Config** - ให้คัดลอก `ltoken_v2` และ `ltuid_v2` ที่แสดงในช่อง `value` และนำไปใส่ในช่อง [Config](https://github.com/Nattapat2871/HoyoverseGames-auto-login/blob/main/README_TH.md#configuration)
    และวาง token ไว้ในช่อง
      `token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", `
 
