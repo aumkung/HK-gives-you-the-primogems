@@ -77,13 +77,32 @@ const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/127643386537
    และวาง token ไว้ในช่อง
      `token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", `
    
-  <img src="asset/token.png">
+ <p align="center"><img src="asset/token-pc.png"></p>
 </details>
 
 <details>
 <summary><b> Moblie Version</b></summary>
 <br>
 
-1.
+#### เนื่องจากแอป `Chome Moblie` ไม่มี `Developer tools` ดังนั้น ต้องเปลี่ยนไปใช้ **`Kiwi browser`** และใช้ **Extension `Cookie Editor`** <br>
+
+* **Kiwi browser** - คือเว็บเบราว์เซอร์สำหรับใช้งานบนระบบปฏิบัติการ Android พัฒนาขึ้นโดยใช้พื้นฐานจาก Chromium ซึ่งเป็นโครงการโอเพนซอร์สตัวเดียวกับที่ Google Chrome ใช้ มีจุดเด่นคือ สามารถรองรับการใช้งาน **ส่วนขยาย (Extensions)** ส่วนใหญ่ที่มีอยู่บน [Chrome Web Store](https://chromewebstore.google.com/) โดยตรงบนมือถือ Andiord  ได้
+  
+* **ติดตั้ง Kiwi browser** - สามารถติดตั้ง **Kiwi browser**  ได้ใน  [play Store](https://play.google.com/store/apps/details?id=secure.unblock.unlimited.proxy.snap.hotspot.shield&pcampaignid=web_share)
+
+* **Extension** - เมื่อโหลดเสร็จแล้วให้เข้าไปที่แอป และไปที่ `เพิ่มเติม ( ขีด 3 ขีด )` อยู่มุมขวาบนของแอป > `Extension` > `Find&install Extension` จากนั้นค้นหาว่า [Cookie-Editor](https://addons.mozilla.org/th/firefox/addon/cookie-editor/) ตามภาพด้านล่าง และกด `Add to kiwi` > `install`
+
+* **Go To Web** - เมื่อติดตั้งส่วนขยายแล้วให้เข้าไปที่ [เว็บทางการของ hoyolab](https://www.hoyolab.com)  และให้ล็อคอินให้เรียบร้อย
+
+* **Token** - กดไปที่ `kiwi Extensions` ไอคอนสี่เหลี่ยมฝั่งซ้ายของไอคอน 3 ขีด ที่อยู่ขวาบนของแอป > `Cookie-Editor` จากนั่นจะเห็น `cookies` ทั้งหมดบนเว็บนี้ ให้เลื่อนหา `ltoken_v2` และ `ltuid_v2`
+
+* **Config** - ให้คัดลอก `ltoken_v2` และ `ltuid_v2` ที่แสดงในช่อง `value` และนำไปใส่ในช่อง [Config](https://github.com/Nattapat2871/HoyoverseGames-auto-login/edit/main/README_TH.md#configuration)
+   และวาง token ไว้ในช่อง
+     `token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", `
+
+
+> **iOS** - ยังไม่มีวิธีดู `token` จากมือถือเพราะข้อจำกัดของ iOS ไม่อนุญาต และไม่มีแอปที่รองรับ `developer tools` เลย
+> 
+<p align="center"><img src="asset/token-mobile.png"></p>
 
 
