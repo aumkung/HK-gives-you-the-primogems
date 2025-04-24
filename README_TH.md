@@ -8,7 +8,7 @@
     
 ### หรือ *Hoyolab auto login*
 script นี้จะเช็คอินรางวัลใน HoyoLab ของเราโดยอัตโนมัติ ใช้งานง่าย และปลอดภัย โดยสามารถรองรับบัญชีเดียวแต่ล็อคอินได้ทุกเกม  ในตอนนี้จะรองรับ Genshin impact , Honkai Starrail , Zenless Zone Zero , Honkai Impact 3 และ Tears of Themis 
-<p align="center"><img src="asset/embed.png"></p>
+<p align="center"><img src="asset/Thai_Notification_webhook.png"></p>
 
  ## คุณสมบัติ
  * **หน้าต่างการแจ้งเตือนสวย** - Embeds ที่แจ้งเตือนการล็อคอินใน Discord สวยงาม
