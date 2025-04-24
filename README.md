@@ -6,5 +6,7 @@
 <p align= "center">
         <b>English</b>　<a href="/README_TH.md">Thai</a>
 
-A
+
+
+# <a href="/README_TH.md"> GO READ THAI VERSION</a>
         
