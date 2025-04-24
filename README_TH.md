@@ -59,7 +59,7 @@ const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/127643386537
   Token นั้นเราสามารถดึงออกมาจากเบราเซอร์ได้โดยการเข้าไปที่เว็บทางการของ HoyoLab โดยเข้าไปที่ https://www.hoyolab.com/home จากนั้น ทำการล็อคอินเว็บไซต์ให้เรียบร้อย 
   เปิด Developer Tools (F12) ขึ้นมา ไปที่ "application" และเลื่อนลงมาดูที่ "storage" เลือก "cookies" และเลือกที่ "https://www.hoyolab.com/home"  จากนั้นทำการค้นหาว่า "lt" ที่ช่อง filter <br>
   จากนั้นจะเห็น ltoken_v2 ( กรอบสีเหลือง ) และ ltuid_2 ( กรอบสีแดง ) ในภาพ  ให้คัดลอกเอา ltoken_2 บรรทัดไหนก็ได้และ ltuid_v2  บรรทัดไหนก็ได้ แล้วนำไปใส่ใน Configuration ในช่อง <br>
-  token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", 
+  token: "ltoken_v2=โทเคนที่ได้; ltuid_v2=โทเคนที่ได้;", 
   <img src="asset/token.png">
 
 
