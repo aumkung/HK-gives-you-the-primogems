@@ -163,6 +163,7 @@ This script uses your `Token HoYoLab` to automatically log into HoYoLab for the 
 * [main.js](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/main.js)  is a script meant to be run on your own machine `(e.g., run with vscode)`.  It can't be used directly in Google Apps Script, but the functions are the same.
 * [node_modules](node_modules) are modules only for `main.js`, not related to `Rimuru-gives-you-the-primogems.js`
 * [gs](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/tree/main/gs) The files inside this folder are actually `.gs` **These are the scripts for running on Google Apps Script.** They can't be run on your machine. There's an [English version](gs/Rimuru-gives-you-the-primogems.js) และ [Thai version](gs/Thai_Rimuru-gives-you-the-primogems.js)
+* [oldscript](gs/oldscript.js) Do not use this script. I have been using this old script for a year now. ( i commit here just save old script )
 
 ## MIT License - Copyright and Licensing
 
