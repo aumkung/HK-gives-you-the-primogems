@@ -223,7 +223,7 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 
 ## Source Code 
 > Source Code นี้ผมใช้ `Gemini advence 2.5 Pro` ช่วยเขียนสคริปต์ให้นิดหน่อย
-* [main.js](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/main.js) เป็นสคริปต์ที่เอาไว้สำหรับรันในเครื่องของคุณ `เช่นรันที่ vscode` ไม่สามารถใช้ได้ที่ Google App Script แต่ฟังก์ชั่นทุกอย่างเหมือนกัน
+* [main.js](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/main.js) เป็นสคริปต์ที่เอาไว้สำหรับรันในเครื่องของคุณ `เช่นรันที่ vscode` ไม่สามารถใช้ได้ที่ Google App Script แต่ฟังก์ชั่นทุกอย่างเหมือนกัน  (ก่อนใช้งานต้องติดตั้ง Node_modules ของ `axios` ก่อนนะครับ)
 * [node_modules](node_modules) โมดูลสำหรับ `main.js` เท่านั้น ไม่เกี่ยวกับ `Rimuru-gives-you-the-primogems.js`
 * [gs](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/tree/main/gs) ข้างในโฟล์เดอร์นี้จริงๆแล้วเป็น `.gs` **เป็นสคริปต์สำหรับรันที่ Google App Script** รันบนเครื่องไม่ได้ จะมีเวอร์ชั่น [ภาษาอังกฤษ](gs/Rimuru-gives-you-the-primogems.js) และ [ภาษาไทย](gs/Thai_Rimuru-gives-you-the-primogems.js)
 * [oldscript](gs/oldscript.js) อย่าใช้สคริปต์เก่านี้ ผมใช้สคริปต์นี้ล็อคอินตลอด 1 ปีกว่า ( ผมแค่อยากเซฟสคริปต์เก่าไว้ตรงนี้ )
