@@ -16,7 +16,7 @@
  *  **ฟรี** - สามารถนำสคริปต์นี้ไปใช้งานฟรีได้ใน [Google App Script](https://script.google.com/home/start)  หรือจะใช้ในเวอร์ชั่นของ Javascript ก็ได้ 
  *  **ใช้งานง่าย** - เพราะสคริปต์ใช้ได้โดยไม่ต้องเปิดเว็บอะไรเลย และจะแจ้งเตือนอัตโนมัติผ่าน Discord Webhooks
  *  **ตั้งค่าง่าย** - ในสคริปต์จะมีโซนที่สามารถปรับแต่งเองได้ เช่น ล็อคอินเกมอะไร , UID , ภาษา , การแจ้งเตือนผ่าน Discord หรือ ปรับแต่งชื่อและรูปอวาตาร์เอง
- *  **การล็อคอิน** - ถึงจะรองรับแค่ 1 บัญชี แต่ถ้าทุกเกม login ด้วยบัญชี Hoyolab อันเดียวกัน ก็สามารถล็อคอินได้ทุกเกม **`Genshin Impact , Honkai Starrail , Zenless Zone Zero , Honkai Impact 3 , Tears of Themis`** และทุกเซิฟเวอร์ **`Asia , Europe , America , TW HK WO server`** ก็ล็อคอินได้หมด
+ *  **การล็อคอิน** - รองรับได้หลายบัญชี  และถ้าทุกเกม login ด้วยบัญชี Hoyolab อันเดียวกัน ก็สามารถล็อคอินได้ทุกเกม **`Genshin Impact , Honkai Starrail , Zenless Zone Zero , Honkai Impact 3 , Tears of Themis`** และทุกเซิฟเวอร์ **`Asia , Europe , America , TW HK WO server`** ก็ล็อคอินได้หมด
 
         
 ## การ Setup
@@ -28,18 +28,24 @@
 
 ## Configuration
 ```Javascript 
-     const profiles = [
+const profiles = [
+    
     {  // --- โซนที่ต้องปรับแต่ง ---
 
-        // --- ใส่ TOKEN ของ HoYoLab ---
-        token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", 
+
+        // Main Account 
+
+         accountName: "Main", // <--- เพิ่มชื่อบัญชีตรงนี้
+         myDiscordID: "", // <--- ใส่ Discord ID สำหรับบัญชีนี้
+
+         token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", // <--- ใส่ token HoYoLab ตรงนี้
 
         // --- ตั้งค่าเกมที่จะเปิดใช้ออโต้ล็อคอิน ( true = เปิด , false = ปิด ) ---
         genshin: true,
         honkai_star_rail: true,
         zzz: true,
         honkai_3: true,
-        Tears of Themis: true,
+        tears_of_themis: true,
 
         // --- ใส่ UID ของเกมที่จะออโต้ล็อคอิน---
         customUids: {
@@ -47,9 +53,8 @@
             Star_Rail: "",
             ZZZ: "",
             Honkai_3: "",
-            Tears of Themis: "",
-        }
-     },
+            Tears_of_Themis: ""
+        },
 
 
         // รองรับ 15 ภาษา ดังนี้
@@ -70,12 +75,60 @@
         // Tiếng Việt (Vietnamese): vi-vn
 
         lang: 'th-th' // <--- ใส่ภาษาที่ต้องการ ในที่นี้จะเลือกภาษาไทย
+    },
+
+    {    
+        // Account 2 : ถ้ามีต้องการให้ล็อคอิน 2 บัญชี 
+
+        accountName: "", // <--- เพิ่มชื่อบัญชีตรงนี้
+        myDiscordID: "", // <--- ใส่ Discord ID สำหรับบัญชีนี้
+
+        token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;",  // <--- ใส่ token HoYoLab ตรงนี้
+
+        // --- ตั้งค่าเกมที่จะเปิดใช้ออโต้ล็อคอิน ( true = เปิด , false = ปิด ) ---
+        genshin: true,
+        honkai_star_rail: true,
+        zzz: true,
+        honkai_3: true,
+        tears_of_themis: true,
+
+        // --- ใส่ UID ของเกมที่จะออโต้ล็อคอิน---
+        customUids: {
+            Genshin: "",
+            Star_Rail: "",
+            ZZZ: "",
+            Honkai_3: "",
+            Tears_of_Themis: ""
+        },
+
+        lang: 'th-th' // <--- ใส่ภาษาที่ต้องการ ในที่นี้จะเลือกภาษาไทย
+    },
+
+    /* 
+    {    
+        // Account 3 , 4 , 5 :    ถ้ามีอีกหลายบัญชีให้คัดลอกรูปแบบจากด้นบนแล้วมาเพิ่มเอาเองได้เลย
+
+        accountName: "", // <--- เพิ่มชื่อบัญชีตรงนี้
+        myDiscordID: "", // <--- ใส่ Discord ID สำหรับบัญชีนี้       เป็นต้น  */ 
+
+    
 ];
+
+
+
+/** การล็อคอินหลายบัญชี **/
+const Multiple_accounts = false; // <---  true = (เปิด) ล็อคอินหลายบัญชี , false = (ปิด) ล็อคอินเฉพาะบัญชีหลัก
 
 /** การแจ้งเตือนที่ Discord **/
 const discord_notify = true; // ตั้งค่าให้เป็น true เพื่อรับการแจ้งเตือน
-const myDiscordID = ""; // <---  ใส่ Discord ID ของตัวเอง
-const discordWebhook = "https://canary.discord.com/api/webhooks/"; // <--- ใส่ Webhook URL
+const discordWebhooks = [
+    "https://canary.discord.com/api/webhooks/", // <--- ใส่ Main Webhook URL 
+
+    /* สามารถเพิ่ม URL เพื่อส่งการแจ้งเตือนไปที่ช่องข้อความไหนก็ได้ */
+ // "https://canary.discord.com/api/webhooks/",  // <--- ใส่ Webhook URL 2
+ // "https://canary.discord.com/api/webhooks/",  // <--- ใส่ Webhook URL 3
+
+];
 const webhooks_username = "ʀɪᴍᴜʀᴜ ɢɪᴠᴇꜱ ʏᴏᴜ ᴛʜᴇ ᴘʀɪᴍᴏɢᴇᴍ"  // <--- ใส่ชื่อของ Webhooks
 const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/1276433865375879199/1277718573439127572/image.png?ex=66ce2fa6&is=66ccde26&hm=0e32ea05e2b673c64ae1bfc310bd5e045875a6d5798c768c18f877929922540a&"  // <--- ใส่รูปภาพของ webhooks
 
@@ -83,15 +136,20 @@ const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/127643386537
 const logedin_text = "ได้ล็อคอินแล้ว!"
 const totalclaim_text_1 = "คุณได้ล็อคอิน"
 const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
+
+
+//     ---- ส่วนที่ต้องแก้ไขเองมีเท่านี้ ----
 ```
 ### อธิบายค่า `config` นี้
+* **`accountName`** ตั้งชื่อบัญชีนั้น โดยหลักๆก็ต้องตั้งว่า `Main`
+*  **`mydiscordID`** ใส่เพื่อระบุคนที่เป็นเจ้าของบัญชี HoYoLab และเอาไว้แท็กแจ้งเตือน
 *  **`token`** คือค่าที่คุณต้องเอามาใส่เพื่อให้สคริปต์ใช้งาน เพื่อล็อคอินบัญชีคุณได้  **```token: "ltoken_v2=xxใส่ค่าที่นี่xx; ltuid_v2=xxใส่ค่าที่นี่xx;",```** [ดูคำแนะนำเพิ่มเติม](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/README_TH.md#token-hoyolab)
 *  **`ตั้งค่าเกมที่จะเปิดใช้ออโต้ล็อคอิน `** ตั้งค่าเกมที่เราจะล็อคอินโดยจะเปิดแค่บางเกมก็ได้ เช่น ถ้าอยากใช้แค่ Genshin ก็ให้แก้ไขสคริปต์เป็น  **```genshin: true, honkai_star_rail: false, zzz: false, honkai_3: false, Tears of Themis: false,```**
-*  **`lang`** คือค่าที่ใส่เพื่อให้แสดงภาษาที่เราต้องการ ถ้าเป็นภาษาอังกฤษ แก้ไขเป็น ``` lang: 'en-us'```
 *  **`CustomUid`** คือให้ใส่เลข uid ในแต่ละเกมของบัญชีนั้นลงไปโดยจะใส่หรือไม่ก็ได้
+*  **`lang`** คือค่าที่ใส่เพื่อให้แสดงภาษาที่เราต้องการ ถ้าเป็นภาษาอังกฤษ แก้ไขเป็น ``` lang: 'en-us'```
+*  **`Multiple_accounts`** เปิดใช้หลายบัญชี ถ้าเปิด`true`ต้องตั้งค่าอีกบัญชีที่ `Account 2`  ถ้าไม่ใช้ก็ปิดไว้ได้เลย `false`
 *  **`discord_notify`** คือ`เปิด`การใช้การแจ้งเตือนผ่าน Webhoook Discord ถ้า`ปิด(false)`จะไปแสดงที่ `consolelog` แทน
-*  **`mydiscordID`** ใส่เพื่อระบุคนที่เป็นเจ้าของบัญชี HoYoLab และเอาไว้แท็กแจ้งเตือน
-*  **`discordWebhook`** เพื่อให้สคริปต์แจ้งเตือนได้ จำเป็นต้องมี `URL` โดยไปที่เซิรฟ์เวอร์ที่เราเป็นเจ้าของ **`สร้างช่องมาใหม่ > แก้ไขช่อง > การรวม > webhooks > สร้างWebhooksใหม่ > และคัดลอก URL Webhooks`** นั้นมาใส่ในค่านี้
+*  **`discordWebhook`** เพื่อให้สคริปต์แจ้งเตือนได้ จำเป็นต้องมี `URL` โดยไปที่เซิรฟ์เวอร์ที่เราเป็นเจ้าของ **`สร้างช่องมาใหม่ > แก้ไขช่อง > การรวม > webhooks > สร้างWebhooksใหม่ > และคัดลอก URL Webhooks`** นั้นมาใส่ในค่านี้ และสามารถใส่ได้หลายช่องเผื่อจะให้แจ้งเตือนหลายดิส
 *  **`webhooks_username`** และ **`webhooks_avatar_url`**  เพื่อกำหนดชื่อของ Webhooks นั้นตอนแจ้งเตือน และตกแต่งด้วยภาพโปรไฟล์อวาตาร์
   
 #### สคริปต์ที่ต้องแก้ไขเองมีแค่นี้ ส่วนสคริปต์ที่เหลือเป็นการเรียกใช้งานสคริปต์โดยไม่ต้องไปยุ่งกับมัน  
@@ -187,6 +245,7 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 
 ## Changelogs
 
+* `23:30 25/4/2025 : เพิ่มฟังก์ชั่น การล็อคอินได้หลายบัญชี และ แจ้งเตือน Webhooks Discord ได้หลายเซิรฟ์เวอร์`
 * `10:55 25/4/2025 : เพิ่ม MIT License`
 * `02:18 25/4/2025 : แก้ไข Debug ของ Consolelog นิดหน่อย`
 * `23:30 24/4/2025 : เพิ่มฟังก์ชั่นเลือกภาษาได้`
