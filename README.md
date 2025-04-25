@@ -14,10 +14,10 @@ This `Javascript` is an automatic script for Google Apps Script. It handles your
 
  ## Features
  * **Cool Notification Window** - The Discord notification embeds for check-ins look great.
- * **Safe** - You can use and adapt this script yourself without worrying about your data leaking.
+ * **Safe** - you can edit this script with yourself without worrying about your data leaking.
  *  **Free** - You can use this script for free on [Google App Script](https://script.google.com/home/start) or use the [Javascript](main.js) version. 
  *  **Easy to Use** - The script works without needing to open any websites, and it automatically notifies you via Discord Webhooks.
- *  **Easy Setup** - There's a specific section in the script you can customize, like which games to check in, UIDs, language, Discord notifications, or even customizing the webhook name and avatar.
+ *  **Easy Setup** - There's a specific section in the script you can customize, like which games to check in, UIDs, languages, Discord notifications, or even customizing the webhook name and avatar.
  *  **Check-ins** - Although it supports one account, if all your games use the same HoYoLab account, it can check in for all of them: `Genshin Impact, Honkai Star Rail, Zenless Zone Zero, Honkai Impact 3, Tears of Themis.` It works for all servers too: `Asia, Europe, America, TW HK MO server.`
 
         
