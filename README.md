@@ -129,7 +129,7 @@ const totalclaim_text_2 = "days this month"
 > **iOS** - There's currently no way to view the `token` on mobile because iOS has limitations and doesn't support apps with `developer tools`
 
 ### Andriod : 
-#### Since `Chome Moblie` doesn't have  `Developer tools` , you need to use **`Kiwi browser`** and the `Cookie Editor` Extension instead ** <br>
+#### Since `Chome Moblie` doesn't have  `Developer tools` , you need to use **`Kiwi browser`** and the `Cookie Editor` Extension instead  <br>
 
 * **Kiwi browser** -  It's a web browser for Android based on Chromium (same as Google Chrome). Its main feature is that it `supports most Extensions` from the [Chrome Web Store](https://chromewebstore.google.com/category/extensions) directly on your Android phone.
   
