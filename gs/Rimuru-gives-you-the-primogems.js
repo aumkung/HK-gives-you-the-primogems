@@ -8,10 +8,16 @@
 
 
 const profiles = [
+    
     {  // --- Configuration Section ---
 
-        // --- PUT YOUR TOKEN ---
-        token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", 
+
+        // Main Account 
+
+         accountName: "Main", // <--- Enter AccountName 
+         myDiscordID: "", // <--- Enter ID Discord of account owner.
+
+         token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;", // <--- PUT YOUR TOKEN
 
         // --- Setting the game to enable (true = enable, false = disable) ---
         genshin: true,
@@ -20,7 +26,7 @@ const profiles = [
         honkai_3: true,
         tears_of_themis: true,
 
-        // --- Enter your UID  ---
+        // --- Enter your UID ---
         customUids: {
             Genshin: "",
             Star_Rail: "",
@@ -49,19 +55,78 @@ const profiles = [
 
         lang: 'en-us' // <--- Enter the desired language.
     },
+
+    {    
+        // Account 2 : If you want to log in to Multiple_accounts
+
+        accountName: "", // <--- Enter AccountName 
+        myDiscordID: "", // <--- Enter ID Discord of account owner.
+
+        token: "ltoken_v2=xxxxxx; ltuid_v2=xxxxxx;",  // <--- PUT YOUR TOKEN
+
+        // --- Setting the game to enable (true = enable, false = disable) ---
+        genshin: true,
+        honkai_star_rail: true,
+        zzz: true,
+        honkai_3: true,
+        tears_of_themis: true,
+
+        // --- Enter Your UID ---
+        customUids: {
+            Genshin: "",
+            Star_Rail: "",
+            ZZZ: "",
+            Honkai_3: "",
+            Tears_of_Themis: ""
+        },
+
+        lang: 'en-us' // <--- Enter the desired language.
+    },
+    
+    /* 
+    {    
+        // Account 3 , 4 , 5 :    If you have multiple accounts, you can copy the format from above and add them yourself.
+
+        accountName: "", // <--- Enter AccountName 
+        myDiscordID: "", // <--- Enter ID Discord of account owner.      etc. */ 
 ];
+
+
+
+/** Multiple account login **/
+const Multiple_accounts = false; // <---  true = (on) multiple account login, false = (off) Main account login only
 
 /** Discord Notification **/
 const discord_notify = true; // Set to true to enable Discord notifications.
-const myDiscordID = ""; // <---  Enter Your Discord User ID 
-const discordWebhook = "https://canary.discord.com/api/webhooks/"; // <---  Enter Your Webhooks URL
-const webhooks_username = "ʀɪᴍᴜʀᴜ ɢɪᴠᴇꜱ ʏᴏᴜ ᴛʜᴇ ᴘʀɪᴍᴏɢᴇᴍ"  // <--- ใส่ชื่อของ Webhooks
+const discordWebhooks = [
+    "https://canary.discord.com/api/webhooks/", // <--- Enter Main Webhook URL 
+
+    /* You can add a URL to send notifications to any message box. */
+ // "https://canary.discord.com/api/webhooks/",  // <--- Enter Webhook URL 2
+ // "https://canary.discord.com/api/webhooks/",  // <--- Enter Webhook URL 3
+
+];
+const webhooks_username = "ʀɪᴍᴜʀᴜ ɢɪᴠᴇꜱ ʏᴏᴜ ᴛʜᴇ ᴘʀɪᴍᴏɢᴇᴍ"  // <--- Enter Username Webhooks
 const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/1276433865375879199/1277718573439127572/image.png?ex=66ce2fa6&is=66ccde26&hm=0e32ea05e2b673c64ae1bfc310bd5e045875a6d5798c768c18f877929922540a&"  // <--- Enter Avatar URL link
 
 /** Notification message in Embeds*/
 const logedin_text = "has logged in!"
 const totalclaim_text_1 = "Total Claimed"
 const totalclaim_text_2 = "days this month"
+
+
+//     ---- This is all that needs to be fixed. ----
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -80,7 +145,7 @@ const gameDetails = {
     Tears_of_Themis:{ name: "Tears of Themis", color: 0x000000, key: "tears_of_themis", checkinUrl: "https://act.hoyolab.com/bbs/event/signin/nxx/index.html?act_id=e202202281857121"}
 };
 
-// --- Endpoints (sign, info, home) ---
+// --- Endpoints (รวม sign, info, home) ---
 const gameEndpoints = {
     Genshin: {
         sign: `https://sg-hk4e-api.hoyolab.com/event/sol/sign?lang=${profiles[0].lang}&act_id=e202102251931481`,
@@ -113,9 +178,9 @@ function sleep(ms) {
     Utilities.sleep(ms);
 }
 
-function discordPing() {
-    if (myDiscordID && /^\d+$/.test(myDiscordID)) {
-        return `<@${myDiscordID}>`; 
+function discordPing(discordId) {
+    if (discordId && /^\d+$/.test(discordId)) { 
+        return `<@${discordId}>`;
     } else {
         return "";
     }
@@ -188,7 +253,7 @@ function getCheckInData(gameKey, token, customUid) {
     let todayReward = { name: "N/A", cnt: 0, icon: "" };
     let captchaRisk = false;
     let errorMessage = null;
-    let specificApiMessage = null; // *** เพิ่ม: ตัวแปรเก็บข้อความตรงจาก API ***
+    let specificApiMessage = null; 
 
     try {
         // 1. Attempt Sign-in
@@ -330,7 +395,9 @@ function getCheckInData(gameKey, token, customUid) {
 
 function processProfile(profile) { 
     const profileIdentifier = profile.customUids?.Genshin || profile.customUids?.Star_Rail || profile.customUids?.ZZZ || profile.customUids?.Honkai_3 || profile.token.substring(0, 25) + "...";
-    Logger.log(`\nProcessing account of discord user id : https://discord.com/users/${myDiscordID}`)
+    console.log()
+    console.log()
+    Logger.log(`\nProcessing login for account: ${profile.accountName || 'N/A'} (Discord ID: ${profile.myDiscordID || 'N/A'}, Lang: ${profile.lang})`)
     console.log()
     const finalGameResults = [];
     const gameKeys = Object.keys(gameEndpoints);
@@ -345,11 +412,13 @@ function processProfile(profile) {
                 // --- เช็คอินครั้งที่ 1 (รันเพื่อ Trigger เท่านั้น) ---
                 let firstResult = getCheckInData(gameKey, profile.token, specificCustomUid);
 
-                Utilities.sleep(1000); // รอ 1 วินาที (ใช้ Utilities.sleep)
+                Utilities.sleep(1000); // รอ 1 วินาที
 
                 // --- เช็คอินครั้งที่ 2 (สำหรับส่ง Discord) ---
-                Logger.log(`- [Notification] Logging in for ${gameDetails[gameKey].name}...`);
+                Logger.log(`- [Notification] logging in for ${gameDetails[gameKey].name}...`);
                 let secondResult = getCheckInData(gameKey, profile.token, specificCustomUid);
+                secondResult.accountName = profile.accountName || "N/A"; 
+                secondResult.myDiscordID = profile.myDiscordID; 
                 finalGameResults.push(secondResult);
 
                 // ตรวจสอบว่า 'ครั้งที่สอง' ติด CAPTCHA หรือไม่
@@ -372,6 +441,7 @@ function processProfile(profile) {
                  continue;
             }
         } else if (gameConfigKey && !profile[gameConfigKey]) {
+
              // Logger.log(`- Skipping ${gameDetails[gameKey].name} (disabled).`); 
         }
     }
@@ -390,9 +460,10 @@ function createDiscordEmbed(gameResult) {
     // console.log(`[DEBUG][${gameResult.gameName}] Data for Embed:`, JSON.stringify(gameResult, null, 2));
 
     const embed = {
-        color: gameResult.color || 0x7289DA, 
+        color: gameResult.color || 0x7289DA,
         footer: {
-            text: `${gameResult.gameName} | UID: ${gameResult.uid || 'N/A'}`
+            // แสดงชื่อบัญชี, ชื่อเกม, และ UID ใน Footer
+            text: `Account: ${gameResult.accountName || 'N/A'} | ${gameResult.gameName} | UID: ${gameResult.uid || 'N/A'}`
         },
         timestamp: new Date().toISOString() // Add timestamp
     };
@@ -406,35 +477,35 @@ function createDiscordEmbed(gameResult) {
             embed.title += " (Item N/A or Missing)";
         }
     }
-    // If CAPTCHA error
     else if (gameResult.requiresRetry) {
         embed.title = `${gameResult.gameName} - CAPTCHA Detected`;
     }
     else {
-        if (gameResult.statusMessage.includes("Profile not found")) {
-            embed.title = `${gameResult.gameName} - Profile Not Found`;
-        } else if (gameResult.statusMessage.includes("Error:")) {
-            embed.title = `${gameResult.gameName} - Check-In Error`;
-        }
-        else {
-            embed.title = `${gameResult.gameName} - Check-In Failed`;
-        }
-        if (gameResult.itemName === "N/A" || !gameResult.itemName) {
-            embed.title += " (Item N/A or Missing)";
-        }
+         if (gameResult.statusMessage.includes("Profile not found")) {
+             embed.title = `${gameResult.gameName} - Profile Not Found`;
+         } else if (gameResult.statusMessage.includes("Error:")) {
+             embed.title = `${gameResult.gameName} - Check-In Error`;
+         }
+         else {
+             embed.title = `${gameResult.gameName} - Check-In Failed`;
+         }
+         if (gameResult.itemName === "N/A" || !gameResult.itemName) {
+             embed.title += " (Item N/A or Missing)";
+         }
     }
-
 
     // --- Set Thumbnail ---
     if (gameResult.itemIcon && typeof gameResult.itemIcon === 'string' && gameResult.itemIcon.startsWith('http') && (gameResult.success || gameResult.statusMessage.includes("Already checked in"))) {
         embed.thumbnail = { url: gameResult.itemIcon };
     }
+
+    // --- ตั้ง Fields ---
     embed.fields = [];
 
-    // Field 1: User logged in mention
+    // Field 1: User logged in mention 
     embed.fields.push({
         name: ``,
-        value: `${discordPing()} ${logedin_text}`,
+        value: `${discordPing(gameResult.myDiscordID)} ${logedin_text}`,
         inline: false
     });
 
@@ -445,9 +516,9 @@ function createDiscordEmbed(gameResult) {
         inline: false
     });
 
-    // Field 3: Total Claimed 
+    // Field 3: Total Claimed
     embed.fields.push({
-        name: "", 
+        name: "",
         value: `${totalclaim_text_1} **${gameResult.totalDays === undefined ? 0 : gameResult.totalDays}** ${totalclaim_text_2} `,
         inline: false
     });
@@ -456,77 +527,114 @@ function createDiscordEmbed(gameResult) {
 }
 
 
-function postWebhook(allProfileResults, discordWebhookUrl, discordNotify) {
-    if (!discordNotify || !discordWebhookUrl || !discordWebhookUrl.startsWith("http")) {
-        console.log("Discord notification disabled or webhook URL is invalid/missing.");
+// --- ฟังก์ชั่นของ webhooks ---
+function postWebhook(singleProfileGameResults, webhookUrls, discordNotify) { 
+    if (!discordNotify || !Array.isArray(webhookUrls) || webhookUrls.length === 0) {
+        console.log("[DiscordWebhooks] Notification disabled or invalid/empty webhookUrls.");
         return;
     }
+
+    if (!Array.isArray(singleProfileGameResults) || singleProfileGameResults.length === 0) {
+        console.log("[DiscordWebhooks] No valid game results provided for this profile to send.");
+        return;
+    }
+
     const allEmbeds = [];
-    for (const profileResult of allProfileResults) {
-        for (const gameResult of profileResult.gameResults) {
-            if (gameResult) {
-                allEmbeds.push(createDiscordEmbed(gameResult));
-            }
+    for (const gameResult of singleProfileGameResults) { 
+        if (gameResult) {
+            allEmbeds.push(createDiscordEmbed(gameResult)); 
         }
     }
+
     if (allEmbeds.length === 0) {
-        console.log("No valid game results to send to Discord.");
+        console.log("[DiscordWebhooks] No valid embeds generated from the provided game results.");
         return;
     }
+
     const chunks = [];
     for (let i = 0; i < allEmbeds.length; i += 10) {
         chunks.push(allEmbeds.slice(i, i + 10));
     }
-    console.log(`\n[DiscordWebhooks] Sending ${allEmbeds.length} embeds to Discord in ${chunks.length} message(s)...`);
-    for (const [index, chunk] of chunks.entries()) {
-        const payload = {
-            username: webhooks_username,
-            avatar_url: webhooks_avatar_url,
-            embeds: chunk
-        };
-        try {
-            const params = {
-                method: 'post',
-                contentType: 'application/json',
-                payload: JSON.stringify(payload),
-                muteHttpExceptions: true,
-                headers: { 'Content-Type': 'application/json' }
+
+    for (const [webhookIndex, currentWebhookUrl] of webhookUrls.entries()) {
+        if (!currentWebhookUrl || !currentWebhookUrl.startsWith("http")) {
+            console.warn(`[DiscordWebhooks] Skipping invalid or missing Webhook URL at index ${webhookIndex}.`);
+            continue;
+        }
+
+        const accountNameToLog = allEmbeds[0]?.footer?.text.split('|')[0]?.replace('Account:', '').trim() || 'Current Account';
+        console.log(`\n[DiscordWebhooks] Sending info ${allEmbeds.length} embeds of account :  '${accountNameToLog}' to Webhooks #${webhookIndex + 1}`);
+
+        for (const [chunkIndex, chunk] of chunks.entries()) {
+            const payload = {
+                username: webhooks_username, 
+                avatar_url: webhooks_avatar_url, 
+                embeds: chunk
             };
-            const response = UrlFetchApp.fetch(discordWebhookUrl, params);
-            const responseCode = response.getResponseCode();
-            if (responseCode >= 200 && responseCode < 300) {
 
-                //console.log(`- Sent chunk ${index + 1}/${chunks.length} (${chunk.length} embeds) to Discord.`);
+            try {
+                const params = {
+                    method: 'post',
+                    contentType: 'application/json',
+                    payload: JSON.stringify(payload),
+                    muteHttpExceptions: true,
+                    headers: { 'Content-Type': 'application/json' }
+                };
+                const response = UrlFetchApp.fetch(currentWebhookUrl, params); 
+                const responseCode = response.getResponseCode();
+                if (responseCode >= 200 && responseCode < 300) {
 
-            } else {
-                console.error(`- Error sending Discord notification chunk ${index + 1}: HTTP ${responseCode} - ${response.getContentText()}`);
+                    // console.log(`- Sent chunk ${chunkIndex + 1}/${chunks.length} to Webhook #${webhookIndex + 1}.`);
+                } else {
+                    console.error(`- Error sending Discord notification chunk ${chunkIndex + 1} to Webhook #${webhookIndex + 1}: HTTP ${responseCode} - ${response.getContentText()}`);
+                }
+            } catch (error) {
+                console.error(`- Exception sending Discord notification chunk ${chunkIndex + 1} to Webhook #${webhookIndex + 1}:`, error.message);
             }
-        } catch (error) {
-            console.error(`- Exception sending Discord notification chunk ${index + 1}:`, error.message);
-        }
-        if (chunks.length > 1 && index < chunks.length - 1) {
-            Utilities.sleep(1100);
-        }
-    }
+
+            if ((chunks.length > 1 && chunkIndex < chunks.length - 1) || (webhookUrls.length > 1 && webhookIndex < webhookUrls.length - 1)) {
+                 Utilities.sleep(1100); //
+            }
+        } 
+
+        // console.log(`[DiscordWebhooks] ส่งข้อมูลการล็อคอิน ของ '${accountNameToLog}' เสร็จเรียบร้อย #${webhookIndex + 1}.`);
+    } 
 }
 
 // --- Main function to run the script ---
 function main() {
-    Utilities.sleep(1000);console.log();
+    Utilities.sleep(1000); console.log();
     console.log("Starting RIMURU GIVES YOU THE PRIMOGEM Script");
     console.log("Developer by Nattapat2871 https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems");
     Utilities.sleep(2000); console.log();
     console.log("Starting auto log in process...");
     let attempts = 0;
-    const maxAttempts = 3;
+    const maxAttempts = 1; // ตั้งเป็น 1
     let profilesToProcess = [...profiles];
-    const allResultsAcrossAttempts = [];
+
+    
+
+    // --- *** เลือก profiles ตามค่า Multiple_accounts *** ---
+    if (Multiple_accounts) {
+        profilesToProcess = [...profiles];
+        console.log(`[Multiple accounts] Enable multiple login ${profilesToProcess.length} accounts.`);
+    } else {
+        // ใช้เฉพาะ profile แรก ถ้าปิดใช้งาน (และต้องเช็คว่า profiles ไม่ว่างเปล่า)
+        if (profiles && profiles.length > 0) {
+            profilesToProcess = [profiles[0]]; 
+            console.log("[Main account] Enable Main account login");
+        } else {
+            console.log("Multiple accounts mode: DISABLED, but profiles array is empty. No profiles to process.");
+            profilesToProcess = [];
+        }
+    }
 
     while (attempts < maxAttempts && profilesToProcess.length > 0) {
         attempts++;
         if (attempts > 1) {
+   
             console.log(`\n--- Retry Attempt ${attempts}/${maxAttempts} for profiles with CAPTCHA ---`);
-            const retryDelay = 3600000; // 1 hour
+            const retryDelay = 3600000; // 1 hours 
             console.log(`Sleeping for ${retryDelay / 1000 / 60} minutes...`);
             Utilities.sleep(retryDelay);
             console.log("Retrying...");
@@ -535,40 +643,44 @@ function main() {
         for (let i = 0; i < profilesToProcess.length; i++) {
             const currentProfile = profilesToProcess[i];
             let profileResult;
+            let criticalErrorOccurred = false; 
+
             try {
-                profileResult = processProfile(currentProfile);
+                profileResult = processProfile(currentProfile); 
+
                 if (profileResult.requiresRetry) {
-                    console.log(`Profile ${currentProfile.token.substring(0, 20)}... marked for retry.`);
+                    console.log(`Profile ${currentProfile.accountName || currentProfile.token.substring(0, 20)}... marked for retry (CAPTCHA?). No actual retry due to maxAttempts=1.`); //
                     nextRetryProfiles.push(currentProfile);
-                    allResultsAcrossAttempts.push(profileResult);
+
                 } else {
-                    console.log()
-                    console.log(`Account of https://discord.com/users/${myDiscordID} processed.`);
-                    allResultsAcrossAttempts.push(profileResult);
+
+                    if (profileResult.gameResults && profileResult.gameResults.length > 0) {
+                        postWebhook(profileResult.gameResults, discordWebhooks, discord_notify);
+                    } else {
+                        console.log(`   - No game results to send for profile: ${currentProfile.accountName || 'N/A'}`);
+                    }
+                    console.log(`Account : ${currentProfile.accountName || 'N/A'} (Discord ID: ${currentProfile.myDiscordID || 'N/A'}) processed successfully.`); 
                 }
             } catch (error) {
-                console.error(`Critical error processing profile ${currentProfile.token.substring(0, 20)}...:`, error.message, error.stack);
-                const errorResult = { /* ... create error result object ... */ }; 
-                allResultsAcrossAttempts.push(errorResult);
+                criticalErrorOccurred = true;
+                const profileIdentifier = currentProfile?.accountName || currentProfile?.token?.substring(0, 20) || 'Unknown Profile';
+                const discordIdForLog = currentProfile?.myDiscordID || 'N/A';
+                console.error(`Critical error processing profile '${profileIdentifier}' (Discord ID: ${discordIdForLog}):`, error.message, error.stack); 
+                // ไม่ต้องทำอะไรเพิ่ม เพราะเราไม่ส่ง webhook เมื่อเกิด error ร้ายแรง
             }
+
+            // หน่วงเวลาระหว่างการล็อคอินเล็กน้อย (เผื่อช่วยลด Rate Limit)
+            if (i < profilesToProcess.length - 1) {
+                 Utilities.sleep(2000); // รอ 2 วินาทีก่อนเริ่มโปรไฟล์ถัดไป 
+            }
+
         }
+
         profilesToProcess = nextRetryProfiles;
-        if (profilesToProcess.length === 0) {
-            // console.log("No more profiles require retries.");
-            break;
-        }
-        if (attempts >= maxAttempts && profilesToProcess.length > 0) {
-            console.log(`\nReached max retry attempts (${maxAttempts}). Reporting final status for remaining ${profilesToProcess.length} profiles.`);
-            profilesToProcess.forEach(profile => {
-                try {
-                    const finalResult = processProfile(profile);
-                    allResultsAcrossAttempts.push(finalResult);
-                } catch (e) { /* handle error */ }
-            });
-        }
-    }
-    postWebhook(allResultsAcrossAttempts, discordWebhook, discord_notify);
+
+    } 
+
+    console.log()
     console.log("\nLogged in process completed.");
 }
-
 
