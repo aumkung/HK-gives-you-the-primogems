@@ -98,7 +98,6 @@ const Multiple_accounts = false; // <---  true = (on) multiple account login, fa
 
 /** Discord Notification **/
 const discord_notify = true; // Set to true to enable Discord notifications.
-<<<<<<< HEAD
 const discordWebhooks = [
     "https://canary.discord.com/api/webhooks/", // <--- Enter Main Webhook URL 
 
@@ -108,11 +107,6 @@ const discordWebhooks = [
 
 ];
 const webhooks_username = "ʀɪᴍᴜʀᴜ ɢɪᴠᴇꜱ ʏᴏᴜ ᴛʜᴇ ᴘʀɪᴍᴏɢᴇᴍ"  // <--- Enter Username Webhooks
-=======
-const myDiscordID = ""; // <---  Enter Your Discord User ID 
-const discordWebhook = "https://canary.discord.com/api/webhooks/"; // <---  Enter Your Webhooks URL
-const webhooks_username = "ʀɪᴍᴜʀᴜ ɢɪᴠᴇꜱ ʏᴏᴜ ᴛʜᴇ ᴘʀɪᴍᴏɢᴇᴍ"  // <--- Enter Your Username Webhooks
->>>>>>> daacd3cfa29071cc27e305481aec9eeafbae146f
 const webhooks_avatar_url = "https://cdn.discordapp.com/attachments/1276433865375879199/1277718573439127572/image.png?ex=66ce2fa6&is=66ccde26&hm=0e32ea05e2b673c64ae1bfc310bd5e045875a6d5798c768c18f877929922540a&"  // <--- Enter Avatar URL link
 
 /** Notification message in Embeds*/
