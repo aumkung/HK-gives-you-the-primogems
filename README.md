@@ -180,6 +180,7 @@ This script uses your `Token HoYoLab` to automatically log into HoYoLab for the 
 
 ## Changelogs
 
+* `15:24 25/4/2025 : Add README.md English version`
 * `10:55 25/4/2025 : Added MIT License`
 * `02:18 25/4/2025 : Fixed Console log Debug slightly`
 * `23:30 24/4/2025 : Added language selection feature`
