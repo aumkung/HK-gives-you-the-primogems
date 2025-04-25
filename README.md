@@ -71,7 +71,7 @@ This `Javascript` is an automatic script for Google Apps Script. It handles your
         // Türkçe (Turkish): tr-tr
         // Tiếng Việt (Vietnamese): vi-vn
 
-        lang: 'th-th' // <--- Enter the desired language.
+        lang: 'en-us' // <--- Enter the desired language.
 ];
 
 /** Discord Notification **/
