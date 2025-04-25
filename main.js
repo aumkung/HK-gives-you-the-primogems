@@ -102,7 +102,7 @@ const discordWebhooks = [
     "https://canary.discord.com/api/webhooks/", // <--- Enter Main Webhook URL
 
     /* You can add a URL to send notifications to any message box. */
- // "https://canary.discord.com/api/webhooks/",  // <--- Enter Webhook URL 2
+  //  "https://canary.discord.com/api/webhooks/",  // <--- Enter Webhook URL 2
  // "https://canary.discord.com/api/webhooks/",  // <--- Enter Webhook URL 3
 
 ];

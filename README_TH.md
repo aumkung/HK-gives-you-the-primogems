@@ -99,7 +99,11 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 
 ## Token HoYoLab  
 
+<<<<<<< HEAD
   คือชุดข้อมูลเฉพาะที่ใช้ในการ **ยืนยันตัวตน ( Authentication )** ของคุณเมื่อต้องการเข้าถึงข้อมูลหรือบริการบางอย่างของ HoYoLab ผ่านทางโปรแกรมหรือสคริปต์ แทนที่จะเป็นการเข้าใช้งานผ่านเว็บบราวเซอร์ตามปกติ โดยทั่วไป `Token` เหล่านี้จะถูกเก็บไว้ใน `Cookies` ของเว็บบราวเซอร์หลังจากที่คุณล็อกอินเข้าสู่ระบบเว็บไซต์ [HoYoLab](hoyolab.com) คุณสามารถหาค่า `ltuid` และ `ltoken` ได้โดยการใช้
+=======
+  คือชุดข้อมูลเฉพาะที่ใช้ในการ **ยืนยันตัวตน ( Authentication )** ของคุณเมื่อต้องการเข้าถึงข้อมูลหรือบริการบางอย่างของ HoYoLab ผ่านทางโปรแกรมหรือสคริปต์ แทนที่จะเป็นการเข้าใช้งานผ่านเว็บบราวเซอร์ตามปกติ โดยทั่วไป `Token` เหล่านี้จะถูกเก็บไว้ใน `Cookies` ของเว็บบราวเซอร์หลังจากที่คุณล็อกอินเข้าสู่ระบบ [เว็บไซต์ทางการของ HoYoLab](https://hoyolab.com) คุณสามารถหาค่า `ltuid` และ `ltoken` ได้โดยการใช้
+>>>>>>> daacd3cfa29071cc27e305481aec9eeafbae146f
 
 <details>
 <summary><b> Chome Desktop Browser ( หาค่าในเดสก์ท็อป ) </b></summary>
@@ -168,6 +172,11 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 * [main.js](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/main.js) เป็นสคริปต์ที่เอาไว้สำหรับรันในเครื่องของคุณ `เช่นรันที่ vscode` ไม่สามารถใช้ได้ที่ Google App Script แต่ฟังก์ชั่นทุกอย่างเหมือนกัน
 * [node_modules](node_modules) โมดูลสำหรับ `main.js` เท่านั้น ไม่เกี่ยวกับ `Rimuru-gives-you-the-primogems.js`
 * [gs](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/tree/main/gs) ข้างในโฟล์เดอร์นี้จริงๆแล้วเป็น `.gs` **เป็นสคริปต์สำหรับรันที่ Google App Script** รันบนเครื่องไม่ได้ จะมีเวอร์ชั่น [ภาษาอังกฤษ](gs/Rimuru-gives-you-the-primogems.js) และ [ภาษาไทย](gs/Thai_Rimuru-gives-you-the-primogems.js)
+<<<<<<< HEAD
+=======
+* [oldscript](gs/oldscript.js) อย่าใช้สคริปต์เก่านี้ ผมใช้สคริปต์นี้ล็อคอินตลอด 1 ปีกว่า ( ผมแค่อยากเซฟสคริปต์เก่าไว้ตรงนี้ )
+  <details><summary><b> old script preview</b></summary><p align=center><img src="asset/oldscript.gif"></p></details>
+>>>>>>> daacd3cfa29071cc27e305481aec9eeafbae146f
 
 ## MIT License - ลิขสิทธิ์และสัญญาอนุญาต
 
@@ -183,10 +192,27 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 
 
 
+<<<<<<< HEAD
 ## Changelogs
 
+=======
+
+## Changelogs
+
+* `17:46 25/4/2025 : เพิ่มสคริปต์เวอร์ชั่นเก่ามาในโฟล์เดอร์ gs`
+* `15:23 25/4/2025 : เพิ่ม README.md ภาษาอังกฤษ`
+>>>>>>> daacd3cfa29071cc27e305481aec9eeafbae146f
 * `10:55 25/4/2025 : เพิ่ม MIT License`
 * `02:18 25/4/2025 : แก้ไข Debug ของ Consolelog นิดหน่อย`
 * `23:30 24/4/2025 : เพิ่มฟังก์ชั่นเลือกภาษาได้`
 * `22:46 24/4/2025 : เพิ่มฟังก์ชั่นล็อคอินเกม Tears of Themis`
+<<<<<<< HEAD
 * `16:25 24/4/2025 : First Commit`
+=======
+* `17:59 24/4/2025 : แปลงไฟล์ Javascript (.js) เป็น Goodle App Script (.gs)` 
+* `16:25 24/4/2025 : First Commit`
+
+
+
+
+>>>>>>> daacd3cfa29071cc27e305481aec9eeafbae146f
