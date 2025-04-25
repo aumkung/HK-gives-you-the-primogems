@@ -3,6 +3,14 @@
     Rimuru-gives-you-the-primogems
 </h1>
 
+<div align="center">
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![GitHub Repo stars](https://img.shields.io/github/stars/Nattapat2871/Rimuru-gives-you-the-primogems?style=flat-square)](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/stargazers)
+![Visitor Badge](https://api.visitorbadge.io/api/VisitorHit?user=Nattapat2871&repo=Rimuru-gives-you-the-primogems&countColor=%237B1E7A&style=flat-square)
+
+</div>
+
 <p align= "center">
         <a href="/README.md">English</a>   <b>Thai</b>　
     
