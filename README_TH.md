@@ -7,7 +7,7 @@
         <a href="/README.md">English</a>   <b>Thai</b>　
     
 ### หรือ ***HoYoLab Auto Login***
-script นี้จะเช็คอินรางวัลใน HoyoLab ของเราโดยอัตโนมัติ ใช้งานง่าย และปลอดภัย โดยสามารถรองรับบัญชีเดียวแต่ล็อคอินได้ทุกเกม  ในตอนนี้จะรองรับ Genshin impact , Honkai Starrail , Zenless Zone Zero , Honkai Impact 3 และ Tears of Themis 
+`Javascript` นี้เป็นสคริปต์อัตโนมัติสำหรับ Google Apps Script เพื่อจัดการการเช็คอินรายวันบน HoYoLab โดยอัตโนมัติ พร้อมระบบแจ้งเตือนผลผ่าน Discord Webhook. ฟรี ใช้งานง่าย และปลอดภัยที่สุด
 <p align="center"><img src="asset/Thai_Notification_webhook.png"></p>
 
  ## คุณสมบัติ
@@ -168,6 +168,20 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 * [main.js](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/main.js) เป็นสคริปต์ที่เอาไว้สำหรับรันในเครื่องของคุณ `เช่นรันที่ vscode` ไม่สามารถใช้ได้ที่ Google App Script แต่ฟังก์ชั่นทุกอย่างเหมือนกัน
 * [node_modules](node_modules) โมดูลสำหรับ `main.js` เท่านั้น ไม่เกี่ยวกับ `Rimuru-gives-you-the-primogems.js`
 * [gs](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/tree/main/gs) ข้างในโฟล์เดอร์นี้จริงๆแล้วเป็น `.gs` **เป็นสคริปต์สำหรับรันที่ Google App Script** รันบนเครื่องไม่ได้ จะมีเวอร์ชั่น [ภาษาอังกฤษ](gs/Rimuru-gives-you-the-primogems.js) และ [ภาษาไทย](gs/Thai_Rimuru-gives-you-the-primogems.js)
+
+## MIT License - ลิขสิทธิ์และสัญญาอนุญาต
+
+`ลิขสิทธิ์ (c) 2025 Nattapat2871` <br>
+**ให้อิสระเต็มที่:** คุณสามารถนำซอฟต์แวร์ไป ใช้, แก้ไข, แจกจ่าย, หรือแม้กระทั่งขายต่อ ได้ฟรีๆ <br>
+**เงื่อนไขเดียว:** ต้อง แนบข้อความลิขสิทธิ์และตัว License นี้ ไปด้วยเสมอ <br>
+**ไม่มีการรับประกัน:** ซอฟต์แวร์ให้มา "ตามสภาพ" ผู้สร้าง ไม่รับประกัน อะไรทั้งสิ้น <br>
+**ไม่รับผิดชอบ:** ถ้าใช้แล้วเกิดปัญหา ผู้สร้าง ไม่รับผิดชอบ ต่อความเสียหายใดๆ
+
+ง่ายๆ คือ "เอาไปใช้ทำอะไรก็ได้ฟรี ขอแค่ใส่ชื่อเจ้าของกับ License กำกับไว้ แต่ใช้แล้วพังหรือเกิดปัญหา ผู้สร้างไม่เกี่ยวนะ"
+
+
+
+
 
 
 ## Changelogs
