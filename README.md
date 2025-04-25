@@ -10,7 +10,7 @@
 
 ### หรือ ***HoYoLab Auto Login***
 This `Javascript` is an automatic script for Google Apps Script. It handles your daily HoYoLab check-ins automatically and sends you status updates through a Discord Webhook. It's free, easy to use, and super safe.
-<p align="center"><img src="asset/Thai_Notification_webhook.png"></p>
+<p align="center"><img src="asset/Notification_webhook.png"></p>
 
  ## Features
  * **Cool Notification Window** - The Discord notification embeds for check-ins look great.
