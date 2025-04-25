@@ -87,7 +87,7 @@ const totalclaim_text_1 = "Total Claimed"
 const totalclaim_text_2 = "days this month"
 ```
 ### Explaining this `config` 
-*  **`token`** You need to paste your HoYoLab token here so the script can log in for you.   **```token: "ltoken_v2=xxPasteValueHerexx; ltuid_v2=xxPasteValueHerexx;",```** [See more info here](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/README_TH.md#token-hoyolab)
+*  **`token`** You need to paste your HoYoLab token here so the script can log in for you.   **```token: "ltoken_v2=xxPasteValueHerexx; ltuid_v2=xxPasteValueHerexx;",```** [See more info here](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/blob/main/README.md#token-hoyolab)
 *  **`Choose which games to auto check-in`** Set which games you want to automatically check in. You can turn only some on. For example, if you only want Genshin, change it to  **```genshin: true, honkai_star_rail: false, zzz: false, honkai_3: false, Tears of Themis: false,```**
 *  **`lang`**  This sets the language for responses. For Japanese, change it to  ``` lang: 'ja-jp'```
 *  **`CustomUid`** Enter your game UID for each game here. It's optional.
@@ -101,7 +101,7 @@ const totalclaim_text_2 = "days this month"
 
 ## Token HoYoLab  
 
-  It's a unique piece of data used to **verify your identity (Authentication)** when you want to access HoYoLab info or services using a program or script, instead of just Browse the website normally. Usually, these `Token`  are stored in your web browser's `Cookies` after you log into the HoYoLab website. [HoYoLab](hoyolab.com) You can find yourา `ltuid` and `ltoken` values using:
+  It's a unique piece of data used to **verify your identity (Authentication)** when you want to access HoYoLab info or services using a program or script, instead of just Browse the website normally. Usually, these `Token`  are stored in your web browser's `Cookies` after you log into the [HoYoLab website.](https://hoyolab.com) You can find your `ltuid` and `ltoken` values using:
 
 <details>
 <summary><b> Chome Desktop Browser ( Finding the values on Desktop )  </b></summary>
