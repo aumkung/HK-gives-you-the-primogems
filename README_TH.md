@@ -169,6 +169,7 @@ const totalclaim_text_2 = "วันแล้ว ในเดือนนี้"
 * [node_modules](node_modules) โมดูลสำหรับ `main.js` เท่านั้น ไม่เกี่ยวกับ `Rimuru-gives-you-the-primogems.js`
 * [gs](https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems/tree/main/gs) ข้างในโฟล์เดอร์นี้จริงๆแล้วเป็น `.gs` **เป็นสคริปต์สำหรับรันที่ Google App Script** รันบนเครื่องไม่ได้ จะมีเวอร์ชั่น [ภาษาอังกฤษ](gs/Rimuru-gives-you-the-primogems.js) และ [ภาษาไทย](gs/Thai_Rimuru-gives-you-the-primogems.js)
 * [oldscript](gs/oldscript.js) อย่าใช้สคริปต์เก่านี้ ผมใช้สคริปต์นี้ล็อคอินตลอด 1 ปีกว่า ( ผมแค่อยากเซฟสคริปต์เก่าไว้ตรงนี้ )
+  <details><summary><b> old script preview</b></summary><p align=center><img src="asset/oldscript.gif"></p></details>
 
 ## MIT License - ลิขสิทธิ์และสัญญาอนุญาต
 
