@@ -17,6 +17,7 @@
 ### หรือ ***HoYoLab Auto Login***
 `Javascript` นี้เป็นสคริปต์อัตโนมัติสำหรับ Google Apps Script เพื่อจัดการการเช็คอินรายวันบน HoYoLab โดยอัตโนมัติ พร้อมระบบแจ้งเตือนผลผ่าน Discord Webhook. ฟรี ใช้งานง่าย และปลอดภัยที่สุด
 <p align="center"><img src="asset/Thai_Notification_webhook.png"></p>
+<p align="center"><img src="asset/result.gif"></p>
 
  ## คุณสมบัติ
  * **หน้าต่างการแจ้งเตือนสวย** - Embeds ที่แจ้งเตือนการล็อคอินใน Discord สวยงาม
