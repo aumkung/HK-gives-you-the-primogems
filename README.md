@@ -22,7 +22,7 @@
 This `Javascript` is an automatic script for Google Apps Script. It handles your daily HoYoLab check-ins automatically and sends you status updates through a Discord Webhook. It's free, easy to use, and super safe.
 <p align="center"><img src="asset/Notification_webhook.png"></p>
 
- ### result :
+ ### result : I didn't log into the game at all, lol. 
 
 <p align="center"><img src="asset/result.gif"></p>
 
