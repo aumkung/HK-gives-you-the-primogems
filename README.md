@@ -250,6 +250,7 @@ This script uses your `Token HoYoLab` to automatically log into HoYoLab for the 
 
 ## Changelogs
 
+* `19:24 26/6/2025 : Added result image And Contact discord server`
 * `23:30 25/4/2025 : Added function Multiple Accounts login And Notify Webhooks in more server`
 * `10:55 25/4/2025 : Added MIT License`
 * `02:18 25/4/2025 : Fixed Console log Debug slightly`
