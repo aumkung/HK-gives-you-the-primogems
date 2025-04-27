@@ -15,11 +15,11 @@ const profiles = [
     token: `ltoken_v2=${process.env.LT_TOKEN}; ltuid_v2=${process.env.LT_UID};`, // <--- PUT YOUR TOKEN
 
     // --- Setting the game to enable (true = enable, false = disable) ---
-    genshin: true,
+    genshin: false,
     honkai_star_rail: true,
     zzz: true,
-    honkai_3: true,
-    tears_of_themis: true,
+    honkai_3: false,
+    tears_of_themis: false,
 
     // --- Enter your UID ---
     customUids: {
@@ -53,17 +53,17 @@ const profiles = [
   {
     // Account 2 : If you want to log in to Multiple_accounts
 
-    accountName: "", // <--- Enter AccountName
-    myDiscordID: "", // <--- Enter ID Discord of account owner.
+    accountName: process.env.ACC_NAME, // <--- Enter AccountName
+    myDiscordID: process.env.DIS_ID, // <--- Enter ID Discord of account owner.
 
     token: `ltoken_v2=${process.env.LT_TOKEN_SECOND}; ltuid_v2=${process.env.LT_UID_SECOND};`, // <--- PUT YOUR TOKEN
 
     // --- Setting the game to enable (true = enable, false = disable) ---
     genshin: true,
-    honkai_star_rail: true,
-    zzz: true,
-    honkai_3: true,
-    tears_of_themis: true,
+    honkai_star_rail: false,
+    zzz: false,
+    honkai_3: false,
+    tears_of_themis: false,
 
     // --- Enter Your UID ---
     customUids: {
@@ -855,12 +855,7 @@ async function main() {
   // Make main async
   await sleep(1000);
   console.log(); // Use await sleep
-  console.log(
-    "Starting RIMURU GIVES YOU THE PRIMOGEM Script (Node.js Version)"
-  );
-  console.log(
-    "Developer by Nattapat2871 https://github.com/Nattapat2871/Rimuru-gives-you-the-primogems"
-  );
+  console.log("Starting GIVES YOU THE PRIMOGEM");
   await sleep(2000);
   console.log(); // Use await sleep
   console.log("Starting auto log in process...");
@@ -967,10 +962,11 @@ async function main() {
   console.log();
   console.log("Logged in process completed.");
   console.log();
+  return;
 }
 
 // --- Start the main function ---
-// ตั้งให้ทำงานทุกวันเวลา 03:00 AM
+// ตั้งให้ทำงานทุกวันเวลา 03:05 AM
 cron.schedule("5 3 * * *", () => {
   try {
     (async () => {
