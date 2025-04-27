@@ -205,7 +205,7 @@ async function makeApiRequest(method, url, token, gameKey, data = null) {
     Connection: "keep-alive",
     "x-rpc-app_version": "2.34.1", // Might need updates periodically
     "User-Agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
     "x-rpc-client_type": "4", // or "5" for web
     Referer: "https://act.hoyolab.com/",
     Origin: "https://act.hoyolab.com",
