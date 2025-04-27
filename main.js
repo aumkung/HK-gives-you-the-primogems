@@ -970,18 +970,13 @@ async function main() {
 }
 
 // --- Start the main function ---
-// main().catch((error) => {
-//   console.error("An uncaught error occurred in the main execution:", error);
-// });
-
 // ตั้งให้ทำงานทุกวันเวลา 03:00 AM
-cron.schedule(
-  "0 3 * * *",
-  () => {
-    console.log("Running task at 00:59 AM");
-    // ใส่โค้ดที่อยากให้ทำตรงนี้ เช่น backup database, ส่ง email ฯลฯ
-  },
-  {
-    timezone: "Asia/Bangkok",
+cron.schedule("5 3 * * *", () => {
+  try {
+    (async () => {
+      await main();
+    })();
+  } catch (error) {
+    console.error("An uncaught error occurred in the main execution:", error);
   }
-);
+});
